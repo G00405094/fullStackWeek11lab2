@@ -10,7 +10,7 @@ const GlobalContext = createContext()
 
 export function GlobalContextProvider(props) {
     const [globals, setGlobals] = useState({ aString: 'init val', count: 0, hideHamMenu: true, cvs: [], dataLoaded: false })
-
+    
     useEffect(() => {
         getAllCvs()
     }, []);
@@ -23,9 +23,10 @@ export function GlobalContextProvider(props) {
                 'Content-Type': 'application/json'
                 
             }
+            
         });
         let data = await response.json();
-        setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.cvs = data.cvs; newGlobals.dataLoaded = true;  return newGlobals })
+        setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.cvs = data.cv || []; newGlobals.dataLoaded = true;  return newGlobals })
     }
 
     async function editGlobalData(command) { // {cmd: someCommand, newVal: 'new text'}
@@ -35,6 +36,7 @@ export function GlobalContextProvider(props) {
             // Correct, we create a whole new object and this forces a re-render:
             setGlobals((previousGlobals) => {
                 const newGlobals = JSON.parse(JSON.stringify(previousGlobals));
+                console.log('Updated Globals:', globals.cvs);
                 newGlobals.hideHamMenu = command.newVal; return newGlobals
             })
         }

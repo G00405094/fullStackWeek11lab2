@@ -3,7 +3,9 @@ import { useRef } from 'react';
 import Card from '../ui/Card';
 import classes from './NewCvForm.module.css';
 
-function CVForm(props) {
+function NewCvForm(props) {
+  console.log('CVForm rendered');
+
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const phoneInputRef = useRef();
@@ -86,4 +88,4 @@ function CVForm(props) {
   );
 }
 
-export default CVForm;
+export default NewCvForm;
