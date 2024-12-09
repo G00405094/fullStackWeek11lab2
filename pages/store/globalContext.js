@@ -28,7 +28,7 @@ export function GlobalContextProvider(props) {
         let data = await response.json();
         setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.cvs = data.cv || []; newGlobals.dataLoaded = true;  return newGlobals })
     }
-    async function deleteCV() {
+    /*async function deleteCV() {
     if (command.cmd === 'deleteCv') {
       const response = await fetch('/api/delete-cv', {
         method: 'DELETE',
@@ -45,7 +45,7 @@ export function GlobalContextProvider(props) {
         return newGlobals;
       });
     }
-}
+}*/
     
 
     async function editGlobalData(command) { // {cmd: someCommand, newVal: 'new text'}
@@ -67,12 +67,22 @@ export function GlobalContextProvider(props) {
                     'Content-Type': 'application/json'
                 }
             });
+
             const data = await response.json(); // Should check here that it worked OK
             setGlobals((previousGlobals) => {
                 const newGlobals = JSON.parse(JSON.stringify(previousGlobals))
                 newGlobals.cvs.push(command.newVal); return newGlobals
             })
             
+        }
+        if (command.cmd == 'deleteCv') {
+            const response = await fetch('/api/delete-cv', {
+                method: 'DELETE',
+                body: JSON.stringify(command.name),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
         }
         
     }
