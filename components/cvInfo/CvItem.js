@@ -6,7 +6,7 @@ function CvItem(props) {
   const router = useRouter();
 
   function showDetailsHandler() {
-    router.push('/' + props.id);
+    router.push('/' + props.name);
   }
 
   return (

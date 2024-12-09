@@ -17,7 +17,7 @@ function MainNavigation() {
 
   const contents = []
   globalCtx.theGlobalObject.cvs.forEach(element => {
-    contents.push({title: element.title, webAddress: '/' + element.name })
+    contents.push({title: element.title, webAddress: '/' + element.infoId })
   });
 
   return (

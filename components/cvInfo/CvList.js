@@ -7,6 +7,7 @@ function CvList(props) {
       {props.cvInfo.map((cv) => (
         <CvItem
         key={cv._id}
+        id={cv.infoId}
         name={cv.name}
         email={cv.email}
         phone={cv.phone}
