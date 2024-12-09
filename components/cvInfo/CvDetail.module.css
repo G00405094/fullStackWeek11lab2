@@ -2,7 +2,7 @@
     max-width: 600px;
     margin: 3rem auto;
     padding: 2rem;
-    background: #ffffff0d; /* Slightly transparent white background if desired */
+    background: #ffffff0d; 
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
@@ -21,7 +21,6 @@
   .detail h2 {
     font-size: 1.3rem;
     margin: 2rem 0 0.5rem 0;
-    font-weight: 600;
     color: #2c292b;
     border-bottom: 2px solid #2b984b;
     display: inline-block;
@@ -31,25 +30,5 @@
   .detail p {
     margin: 0.5rem 0;
     line-height: 1.5;
-  }
-  
-  .detail p strong {
-    font-weight: 600;
-  }
-  
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 600px) {
-    .detail {
-      margin: 2rem 1rem;
-      padding: 1.5rem;
-    }
-  
-    .detail h1 {
-      font-size: 1.8rem;
-    }
-  
-    .detail h2 {
-      font-size: 1.2rem;
-    }
   }
   
