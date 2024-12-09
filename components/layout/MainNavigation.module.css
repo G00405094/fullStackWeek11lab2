@@ -29,7 +29,7 @@
 
 .header a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
 }
 
@@ -38,3 +38,13 @@
 .header a.active {
   color: white;
 }
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
+  margin-left: 13rem;
+}
+
+

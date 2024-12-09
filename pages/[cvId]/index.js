@@ -1,4 +1,5 @@
-import MeetupDetail from '../../components/cvInfo/CvDetail'
+import CvDetail from '../../components/cvInfo/CvDetail'
+//import CvDetail from '../../components/cvInfo/CvDetail'
 import { useRouter } from 'next/router'
 import GlobalContext from "../../pages/store/globalContext"
 import { useContext } from 'react'
@@ -11,7 +12,7 @@ export default function () {
     let returnVal = null
     for (let ii = 0; ii < globalCtx.theGlobalObject.cvs.length; ii++) {
         let temp = globalCtx.theGlobalObject.cvs[ii]
-        if (temp.infoId.trim() == router.query.cvId.trim()) {
+        if (temp.name.trim() == router.query.cvId.trim()) {
             returnVal = (
                 <CvDetail 
                 

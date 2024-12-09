@@ -17,14 +17,17 @@ function MainNavigation() {
 
   const contents = []
   globalCtx.theGlobalObject.cvs.forEach(element => {
-    contents.push({title: element.title, webAddress: '/' + element.infoId })
+    contents.push({ title: element.name, webAddress: '/' + element.name })
   });
 
   return (
     <header className={classes.header}>
+      
+
       <HamMenuContent contents={contents} />
       <HamMenu toggleMenuHide={() => toggleMenuHide()} />
       <HamMenuFAB toggleMenuHide={() => toggleMenuHide()} />
+        <h1 className={classes.title}>CV Creator</h1>
       <nav>
         <ul>
           <li>
@@ -33,10 +36,13 @@ function MainNavigation() {
           <li>
             <Link href='/new-cv'>Add New Cv</Link>
           </li>
+          <li>
+            <Link href='/delete-cv'>Delete Cv</Link>
+          </li>
         </ul>
       </nav>
     </header>
   );
 }
 
-export default MainNavigation
+export default MainNavigation;

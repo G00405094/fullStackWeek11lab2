@@ -1,7 +1,7 @@
 // /api/new-cv
 
-async function handler(req, res) { // can be called anything you like
-  const response = await fetch('http://localhost:8000/readCV', {
+async function handler(req, res) { 
+  const response = await fetch('http://localhost:8000/getCV', {
     method: 'POST',
     body: JSON.stringify({ cmd: 'all' }),
     headers: {

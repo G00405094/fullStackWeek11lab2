@@ -14,6 +14,7 @@ function CvList(props) {
         education={cv.education}
         experience={cv.experience}
         skills={cv.skills}
+        image={cv.image}
         />
       ))}
     </ul>

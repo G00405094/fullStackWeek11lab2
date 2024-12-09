@@ -12,6 +12,7 @@ function NewCvForm(props) {
     const educationInputRef = useRef();
     const experienceInputRef = useRef();
     const skillsInputRef = useRef();
+    const imageInputRef = useRef();
 
     function submitHandler(event) {
         event.preventDefault();
@@ -23,6 +24,7 @@ function NewCvForm(props) {
         const enteredEducation = educationInputRef.current.value;
         const enteredExperience = experienceInputRef.current.value;
         const enteredSkills = skillsInputRef.current.value;
+        const enteredImage = imageInputRef.current.value;
 
         const cvData = {
             infoId: enteredName,
@@ -32,6 +34,7 @@ function NewCvForm(props) {
             education: enteredEducation,
             experience: enteredExperience,
             skills: enteredSkills,
+            image: enteredImage,
         };
 
         console.log('Submitted CV Data:', cvData);
@@ -64,6 +67,8 @@ function NewCvForm(props) {
                 <div className={classes.control}>
                     <label htmlFor="skills">Skills</label>
                     <textarea id="skills" ref={skillsInputRef} required></textarea>
+                    <label htmlFor='image'>Cv Image</label>
+          <input type='url' required id='image' ref={imageInputRef} />
                 </div>
                 <div className={classes.actions}>
                     <button type="submit">Create CV</button>

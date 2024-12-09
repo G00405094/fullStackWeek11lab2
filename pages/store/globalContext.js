@@ -28,6 +28,24 @@ export function GlobalContextProvider(props) {
         let data = await response.json();
         setGlobals((previousGlobals) => { const newGlobals = JSON.parse(JSON.stringify(previousGlobals)); newGlobals.cvs = data.cv || []; newGlobals.dataLoaded = true;  return newGlobals })
     }
+    async function deleteCV() {
+    if (command.cmd == 'deleteCv') {
+        const response = await fetch('/api/delete-cv', {
+            method: 'DELETE',
+            body: JSON.stringify(command.newVal),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json(); // Should check here that it worked OK
+        setGlobals((previousGlobals) => {
+            const newGlobals = JSON.parse(JSON.stringify(previousGlobals))
+            newGlobals.cvs.push(command.newVal); return newGlobals
+        })
+        
+    }
+}
+    
 
     async function editGlobalData(command) { // {cmd: someCommand, newVal: 'new text'}
         if (command.cmd == 'hideHamMenu') { // {cmd: 'hideHamMenu', newVal: false} 
@@ -53,7 +71,9 @@ export function GlobalContextProvider(props) {
                 const newGlobals = JSON.parse(JSON.stringify(previousGlobals))
                 newGlobals.cvs.push(command.newVal); return newGlobals
             })
+            
         }
+        
     }
 
     const context = {

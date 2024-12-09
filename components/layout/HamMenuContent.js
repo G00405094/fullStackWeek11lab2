@@ -2,6 +2,7 @@ import classes from './HamMenuContent.module.css'
 import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 import GlobalContext from "../../pages/store/globalContext"
+//import CvList from './CvList'
 
 export default function HamMenuContent(props) {
     const globalCtx = useContext(GlobalContext)
@@ -26,7 +27,7 @@ export default function HamMenuContent(props) {
         }
     }
 
-    let contentJsx = props.contents.map((item, index) => (  //  [{title: 'Meeting 1', webAddress: '/meet1'}, {title: 'Meeting 2', webAddress: '/meet2'}]
+    let contentJsx = props.contents.map((item, index) => ( //  [{title: 'Meeting 1', webAddress: '/meet1'}, {title: 'Meeting 2', webAddress: '/meet2'}]
         <div className={classes.menuItem} key={index} onClick={() => clicked(item.webAddress)} >{item.title} </div>
     ))
 
