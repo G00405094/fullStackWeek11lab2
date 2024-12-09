@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:  #16cf60;
+  background-color:  #28814b;
   padding: 0 10%;
   color: white;
 }
@@ -40,11 +40,11 @@
 }
 .title {
   font-size: 2rem;
-  color: #333;
+  color: #0f0e0e;
   margin: 0;
   padding: 1rem 0;
   text-align: center;
-  margin-left: 13rem;
+  margin-left: 20rem;
 }
 
 

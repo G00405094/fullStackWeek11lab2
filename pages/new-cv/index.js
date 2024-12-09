@@ -5,8 +5,6 @@ import GlobalContext from "../store/globalContext"
 import { useContext } from 'react'
 
 function NewCvPage() {
-    console.log('NewCvPage rendered'); // Add log to confirm rendering
-     // Temporarily replace the actual content
    const router = useRouter()
     const globalCtx = useContext(GlobalContext)
 

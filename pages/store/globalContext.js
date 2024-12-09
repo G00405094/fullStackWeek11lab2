@@ -66,7 +66,7 @@ export function GlobalContextProvider(props) {
                     'Content-Type': 'application/json'
                 }
             });
-            const data = await response.json(); // Should check here that it worked OK
+            const data = await response.json(); 
             setGlobals((previousGlobals) => {
                 const newGlobals = JSON.parse(JSON.stringify(previousGlobals))
                 newGlobals.cvs.push(command.newVal); return newGlobals

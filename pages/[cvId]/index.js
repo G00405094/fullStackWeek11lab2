@@ -1,5 +1,4 @@
 import CvDetail from '../../components/cvInfo/CvDetail'
-//import CvDetail from '../../components/cvInfo/CvDetail'
 import { useRouter } from 'next/router'
 import GlobalContext from "../../pages/store/globalContext"
 import { useContext } from 'react'
@@ -24,7 +23,6 @@ export default function () {
                     skills={temp.skills} 
                 />
             )        }
-    }
-    // In the real world, we'd put the code above in the store context module. 
+        }
     return returnVal
 }

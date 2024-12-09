@@ -3,7 +3,7 @@ import classes from "./Button.module.css"
 export default function Button(props) {
   let styleObj = { maxWidth: props.maxWidth, minWidth: props.maxWidth }
 
-  if(props.hide) { /* Move the show / hide code to the component itself: */
+  if(props.hide) {
     return null
   }
 

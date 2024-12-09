@@ -1,7 +1,6 @@
 async function handler(req, res) { 
-    const response = await fetch('http://localhost:8000/deleteCV', {
+    const response = await fetch('http://localhost:8000/deleteCV/${name}', {
       method: 'DELETE',
-      body: JSON.stringify({ cmd: 'all' }),
       headers: {
         'Content-Type': 'application/json'
       }
