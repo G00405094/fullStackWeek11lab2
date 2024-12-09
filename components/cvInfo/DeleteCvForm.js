@@ -1,6 +1,8 @@
+import { useState } from 'react';
+import Card from '../ui/Card';
+import classes from './DeleteCvForm.module.css';
 
 function DeleteCvForm(props) {
-  
     const [cvId, setCvId] = useState('');
   
     function submitHandler(event) {
@@ -19,5 +21,6 @@ function DeleteCvForm(props) {
         <button type="submit">Delete CV</button>
       </form>
     );
-  }
-  
+}
+
+export default DeleteCvForm;
